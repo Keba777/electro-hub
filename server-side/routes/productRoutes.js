@@ -1,15 +1,30 @@
-import express, { json } from "express";
-const router = express.Router();
-import Product from "../models/product.js";
+import express from "express";
+import multer from "multer";
+import {
+  getAllProducts,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  getProductById,
+} from "../controllers/productController.js";
 
-router.get("/", async (req, res) => {
-  try {
-    const products = await Product.find();
-    res.json(products);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    res.status(500).json({ message: "Internal Server Error" });
-  }
+const router = express.Router();
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/"); // Set the destination folder for storing images
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
 });
+
+const upload = multer({ storage: storage });
+
+router.get("/", getAllProducts);
+router.post("/", upload.single("image"), createProduct);
+router.put("/:id", updateProduct);
+router.delete("/:id", deleteProduct);
+router.get("/:id", getProductById);
 
 export default router;
