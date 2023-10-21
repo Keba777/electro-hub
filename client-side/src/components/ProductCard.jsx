@@ -9,7 +9,7 @@ const ProductCard = () => {
       {products.map((product) => (
         <div key={product._id}>
           <img
-            className="w-50 mx-3  rounded-5"
+            className="w-32 h-32 mx-3  rounded-5"
             src={`http://localhost:5000/uploads/${product.image}`}
             alt={product.name}
           />
