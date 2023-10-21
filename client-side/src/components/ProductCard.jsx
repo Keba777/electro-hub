@@ -18,6 +18,7 @@ const ProductCard = () => {
             <p className="text-primary">{product.description} </p>
             <p className="text-secondary">{product.price}</p>
             <p className="text-secondary">{product.brand}</p>
+            <p className="text-secondary">{product.type}</p>
             <p className="text-secondary">{product.color}</p>
             <p className="text-secondary">{product.storage}</p>
           </div>

@@ -11,18 +11,17 @@ const getAllProducts = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
-  // Validate the request body
   const { error } = validateProduct(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   const image = req.file.filename;
 
-  // Create a new product object with the image filename
   const product = new Product({
     name: req.body.name,
     price: req.body.price,
     description: req.body.description,
     brand: req.body.brand,
+    type: req.body.type,
     color: req.body.color,
     storage: req.body.storage,
     image: image,
@@ -30,7 +29,6 @@ const createProduct = async (req, res) => {
   });
 
   try {
-    // Save the product to the database
     await product.save();
     res.send(product);
   } catch (err) {
@@ -50,6 +48,7 @@ const updateProduct = async (req, res) => {
         price: req.body.price,
         description: req.body.description,
         brand: req.body.brand,
+        type: req.body.type,
         color: req.body.color,
         storage: req.body.storage,
         isFeatured: req.body.isFeatured,
