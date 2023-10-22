@@ -1,4 +1,5 @@
 import Logo from "../assets/logo/logo.png";
+import { BsCart3 } from "react-icons/bs";
 
 const NavBar = () => {
   return (
@@ -26,8 +27,10 @@ const NavBar = () => {
           <a href="#">Contact Us</a>
         </li>
       </ul>
-      <div className="py-4">
-        <p>the search part</p>
+      <div className="">
+        <span className="bg-transparent hover:bg-slate-950 w-8 h-8 ps-1 pt-1 rounded-full cursor-pointer">
+          <BsCart3 color="#D97706" className="w-6 h-6 " />
+        </span>
       </div>
     </nav>
   );

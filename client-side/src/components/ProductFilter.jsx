@@ -26,7 +26,7 @@ const ProductFilter = ({ onFilterChange }) => {
             onClick={() => setSelectedType(button.value)}
             className={`${
               selectedType === button.value
-                ? "bg-blue-500 text-white"
+                ? "bg-yellow-600 text-white"
                 : "bg-gray-200"
             } px-4 py-2 rounded-full`}
           >
