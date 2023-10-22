@@ -23,10 +23,11 @@ const Hero = () => {
       <div className="grid grid-cols-2 gap-6">
         <div className="mx-20 mt-5 flex flex-col ">
           <h1 className=" text-gray-200 text-5xl font-extrabold mb-4">
-            You&apos;re in good <span className="text-yellow-600">Hands</span>{" "}
-            on our Watch
+            Welcome to <span className="text-yellow-600">ElectroHub.</span>{" "}
+            <span className="block mt-4">Discover the Latest </span>
+            <span className="text-red-500">Electronics.</span>{" "}
           </h1>
-          <div className="mt-20">
+          <div className="mt-12">
             <button className="bg-gray-800 py-3 px-5 text-gray-100 font-semibold rounded-lg border-b-2 border-yellow-600 hover:bg-gradient-to-t from-yellow-600 via-yellow-600 to-gray-800">
               Shop now &gt;
             </button>

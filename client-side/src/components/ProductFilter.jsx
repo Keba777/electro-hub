@@ -18,7 +18,7 @@ const ProductFilter = ({ onFilterChange }) => {
   ];
 
   return (
-    <div className="mx-10 my-6">
+    <div className="mx-10 py-6">
       <div className="flex space-x-4">
         {filterButtons.map((button) => (
           <button

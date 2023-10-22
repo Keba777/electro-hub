@@ -3,8 +3,8 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import ProductGrid from "./components/ProductGrid";
 import ProductFilter from "./components/ProductFilter";
-import ProductForm from "./components/ProductForm";
 import useProducts from "./hooks/useProducts";
+import Footer from "./components/Footer";
 
 function App() {
   const { products } = useProducts();
@@ -24,9 +24,11 @@ function App() {
     <div>
       <NavBar />
       <Hero />
-      <ProductFilter onFilterChange={handleFilterChange} />
-      <ProductGrid products={filteredProducts} />
-      <ProductForm />
+      <div className="bg-slate-100 my-0">
+        <ProductFilter onFilterChange={handleFilterChange} />
+        <ProductGrid products={filteredProducts} />
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-slate-200  py-4 border rounded-lg">
+    <div className="bg-slate-300  py-4 border rounded-lg">
       <div className="flex justify-center">
         <img
           className="w-28 h-32 mx-3  rounded-5"
