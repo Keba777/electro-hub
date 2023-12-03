@@ -64,6 +64,19 @@ const useUsers = () => {
     });
   };
 
+  const loginUser = (credentials) => {
+    return UserService.loginUser(credentials)
+      .then((response) => {
+        const token = response.data.token;
+        console.log("Login successful. Token:", token);
+        return token;
+      })
+      .catch((error) => {
+        console.error("Login failed:", error);
+        throw error;
+      });
+  };
+
   return {
     users,
     error,
@@ -73,6 +86,7 @@ const useUsers = () => {
     createUser,
     updateUser,
     deleteUser,
+    loginUser,
   };
 };
 

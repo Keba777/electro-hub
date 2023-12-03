@@ -20,6 +20,9 @@ class UserService {
   updateUser(blog) {
     return apiClient.put("/users/" + blog._id, blog);
   }
+  loginUser(credentials) {
+    return apiClient.post("/auth", credentials);
+  }
 }
 
 export default new UserService();

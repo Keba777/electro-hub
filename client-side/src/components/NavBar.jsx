@@ -2,6 +2,10 @@ import Logo from "../assets/logo/logo.png";
 import { BsCart3 } from "react-icons/bs";
 
 const NavBar = () => {
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
   return (
     <nav className="bg-slate-900 text-gray-300 flex justify-between px-6  z-10 ">
       <div className="rounded-full flex items-center justify-center ">
@@ -31,6 +35,12 @@ const NavBar = () => {
         <span className="bg-transparent hover:bg-slate-950 w-8 h-8 ps-1 pt-1 rounded-full cursor-pointer">
           <BsCart3 color="#D97706" className="w-6 h-6 " />
         </span>
+        <button
+          onClick={handleLogout}
+          className="bg-blue-600 hover:bg-blue-700 rounded-lg px-5 py-2 text-white font-bold"
+        >
+          Logout
+        </button>
       </div>
     </nav>
   );

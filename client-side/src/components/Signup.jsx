@@ -40,7 +40,7 @@ const Signup = () => {
           </h2>
           <span className="text-xs flex justify-center">
             Already have an account?{" "}
-            <Link to="/signin" className="text-yellow-600 ms-1">
+            <Link to="/login" className="text-yellow-600 ms-1">
               Sign In
             </Link>{" "}
           </span>
