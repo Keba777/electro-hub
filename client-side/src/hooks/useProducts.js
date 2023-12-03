@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import productService from "../services/product-service";
+import ProductService from "../services/product-service";
 import { CanceledError } from "axios";
 
 const useProducts = () => {
@@ -8,7 +8,7 @@ const useProducts = () => {
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    const { request, cancel } = productService.getAllProducts();
+    const { request, cancel } = ProductService.getAllProducts();
     request
       .then((res) => {
         setProducts(res.data);
@@ -26,8 +26,7 @@ const useProducts = () => {
   const createProduct = (newProduct) => {
     const originalProducts = [...products];
 
-    productService
-      .createProduct(newProduct)
+    ProductService.createProduct(newProduct)
       .then((res) => {
         setProducts([res.data, ...products]);
         console.log("product created successfully!", res.data);
@@ -41,8 +40,7 @@ const useProducts = () => {
   const updateProduct = (updatedProduct) => {
     const originalProducts = [...products];
 
-    productService
-      .updateProduct(updatedProduct)
+    ProductService.updateProduct(updatedProduct)
       .then((res) => {
         const updatedProducts = products.map((product) =>
           product._id === res.data._id ? res.data : product
@@ -60,7 +58,7 @@ const useProducts = () => {
     const originalProducts = [...products];
     setProducts(products.filter((b) => b._id !== product._id));
 
-    productService.deleteproduct(product._id).catch(() => {
+    ProductService.deleteproduct(product._id).catch(() => {
       setError("Failed to delete product.");
       setProducts(originalProducts);
     });
