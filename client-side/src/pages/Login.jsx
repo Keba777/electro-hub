@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Logo from "../assets/logo/logo.png";
-import useUsers from "./../hooks/useUsers";
+import useUsers from "../hooks/useUsers";
 
 const Login = () => {
   const {

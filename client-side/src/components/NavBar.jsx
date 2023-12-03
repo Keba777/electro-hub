@@ -1,5 +1,6 @@
 import Logo from "../assets/logo/logo.png";
 import { BsCart3 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const handleLogout = () => {
@@ -20,6 +21,9 @@ const NavBar = () => {
       <ul className="flex space-x-5 px-10 py-4">
         <li className="hover:bg-slate-800 py-2 px-5 rounded-md">
           <a href="#">Home</a>
+        </li>
+        <li className="hover:bg-slate-800 py-2 px-5 rounded-md">
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li className="hover:bg-slate-800 py-2 px-5 rounded-md">
           <a href="#">About Us</a>
