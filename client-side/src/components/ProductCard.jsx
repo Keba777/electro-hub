@@ -16,15 +16,15 @@ const ProductCard = ({ product }) => {
         <h2 className="flex justify-center  text-lg font-bold">
           {product.name}{" "}
         </h2>
-        <p className=" font-semibold text-red-700 flex justify-center">
+        <p className="mt-1 font-semibold text-red-700 flex justify-center">
           ${product.price}
         </p>
       </div>
-      <div className="flex justify-center">
-        <button className="bg-slate-500 py-2 px-4 flex text-gray-100 font-semibold text-sm rounded-lg border-b-2 border-yellow-600 hover:bg-yellow-600 ">
+      <div className="mt-1 flex justify-center">
+        <button className="bg-yellow-700 py-2 px-4 flex text-gray-100 font-semibold text-sm rounded-lg border-b-2 border-yellow-600 hover:bg-yellow-800 ">
           Add to Cart{" "}
           <span className="ms-1">
-            <BsCart3 color="#ff0000" className="w-5 h-5 " />
+            <BsCart3 color="#f1f1f1" className="w-5 h-5 " />
           </span>
         </button>
       </div>
