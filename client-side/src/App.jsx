@@ -5,6 +5,7 @@ import ProductGrid from "./components/ProductGrid";
 import ProductFilter from "./components/ProductFilter";
 import useProducts from "./hooks/useProducts";
 import Footer from "./components/Footer";
+import Signup from "./components/Signup";
 
 function App() {
   const { products } = useProducts();
@@ -24,6 +25,7 @@ function App() {
     <div>
       <NavBar />
       <Hero />
+      <Signup />
       <div className="bg-slate-100 my-0">
         <ProductFilter onFilterChange={handleFilterChange} />
         <ProductGrid products={filteredProducts} />

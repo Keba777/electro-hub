@@ -26,7 +26,7 @@ const useUsers = () => {
   const createUser = (newUser) => {
     const originalUsers = [...users];
 
-    UserService.createuser(newUser)
+    UserService.createUser(newUser)
       .then((res) => {
         setUsers([res.data, ...users]);
         console.log("User created successfully!", res.data);
@@ -40,7 +40,7 @@ const useUsers = () => {
   const updateUser = (updatedUser) => {
     const originalUsers = [...users];
 
-    UserService.updateuser(updatedUser)
+    UserService.updateUser(updatedUser)
       .then((res) => {
         const updatedUsers = users.map((user) =>
           user._id === res.data._id ? res.data : user
