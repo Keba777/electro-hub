@@ -8,11 +8,12 @@ function App() {
   const user = localStorage.getItem("token");
   return (
     <Routes>
-      {user && <Route path="/" exact element={<HomePage />} />}
+      <Route path="/" exact element={<HomePage />} />
+      {/* {user && <Route path="/" exact element={<HomePage />} />} */}
       <Route path="/signup" exact element={<Signup />} />
       <Route path="/login" exact element={<Login />} />
       <Route path="/dashboard" exact element={<Dashboard />} />
-      <Route path="/" exact element={<Navigate replace to="/login" />} />
+      {/* <Route path="/" exact element={<Navigate replace to="/login" />} /> */}
     </Routes>
   );
 }
